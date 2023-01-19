@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Money Conveter</title>
+    <style>
+        .contianer{
+            width: 500px;
+            height: 500px;
+            background-color: rgb(167, 128, 128);
+            margin: auto;
+            border: 5px double blue;
+        }
+        .item{
+            width:450px;
+            background-image: url('/images.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 250px;
+            margin: auto;
+            padding: 20px;
+            border: 5px dotted yellow;
+        }
+        h2{
+            text-align: center;
+        }
+        label{
+            font-size:50px;
+            color: chartreuse;
+        }
+
+        #rupees,#paisa{
+            height: 50px;
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div class="contianer">
+        <h2>Rupess into Paisa</h2>
+        <div class="item">
+            <label for="rupees">Rupess</label>
+            <input type="number" name="rupees" value="1" id="rupees">
+            <label for="paisa">Paisa</label>
+            <input type="number" name="paisa" value="100" id="paisa">
+        </div>
+    </div>
+</body>
+<script>
+    let rs=document.getElementById("rupees");
+    let ps=document.getElementById("paisa");
+
+    rs.addEventListener('input',function(){
+        let money=100*rs.value;
+        ps.value=money;
+    })
+    ps.addEventListener('input', function(){
+        let paisa=ps.value/100;
+        parseInt(paisa);
+        rs.value=paisa;
+    })
+</script>
+</html>
+
